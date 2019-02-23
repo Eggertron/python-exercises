@@ -1,6 +1,22 @@
+"""
+How many letter of the Alphabet?
+
+So I wanted to write a function to find out how many letters
+of the alphabet would appear in a given text.
+
+I've learned that Python has made some optimizations to string
+manipulations to the point where creating functions to match
+C-style programming is not needed.
+"""
+
 import time
  
 def check_alphabets_v1(words):
+  """
+  This was my first attempt. Comming from a C-programming
+  background, my approach was to create as much from
+  scratch as possible.
+  """
   alphabets = [0] * 26
   a = ord('a')
   z = ord('z')
@@ -14,6 +30,9 @@ def check_alphabets_v1(words):
   return results
  
 def check_alphabets_v2(words):
+  """
+  This was my optimization of the first approach.
+  """
   alphabets = [True] * 26
   a = ord('a')
   z = ord('z')
@@ -30,6 +49,11 @@ def check_alphabets_v2(words):
   return results
    
 def check_alphabets_v3(words):
+  """
+  This is an approach that utilizes python for
+  what it is. The stats on this seems to look
+  pretty good.
+  """
   alphabet = "abcdefghijklmnopqrstuvwxyz"
   results = 0
   for letter in alphabet:
@@ -54,7 +78,7 @@ sample = "Hello World"
 debug(sample, check_alphabets_v1)
 debug(sample, check_alphabets_v2)
  
-sample = "the quick brown fox jumps over the lazy dog"
+sample = "the quick brown fox jumps over the lazy dog" * 100
 debug(sample, check_alphabets_v1)
 debug(sample, check_alphabets_v2)
 debug(sample, check_alphabets_v3)

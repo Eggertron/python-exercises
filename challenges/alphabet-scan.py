@@ -40,10 +40,14 @@ def check_alphabets_v3(words):
 
 def debug(text, func):
   start_time = time.time()
-  characters = func(sample)
+  characters = func(text)
   end_time = time.time()
+  print("========= Start Test ===============")
+  print("text: {0}".format(text))
+  print("function: {0}".format(func))
   print("contains {0} letters of the alphabet".format(characters))
   print("time: {0}".format(end_time - start_time))
+  print("========= End   Test ===============\n\n")
           
 sample = "Hello World"
  

@@ -29,6 +29,15 @@ def check_alphabets_v2(words):
           return results
   return results
    
+def check_alphabets_v3(words):
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  results = 0
+  for letter in alphabet:
+    if letter not in words:
+      break
+    results += 1
+  return results
+
 def debug(text, func):
   start_time = time.time()
   characters = func(sample)
@@ -44,3 +53,4 @@ debug(sample, check_alphabets_v2)
 sample = "the quick brown fox jumps over the lazy dog"
 debug(sample, check_alphabets_v1)
 debug(sample, check_alphabets_v2)
+debug(sample, check_alphabets_v3)
